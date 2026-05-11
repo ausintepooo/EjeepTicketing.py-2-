@@ -1,5 +1,6 @@
 import time
 import os
+import sys
 from datetime import datetime
 starmall_sampol = [
     "Starmall",
@@ -41,6 +42,12 @@ Discounts = [
     "Student", "Senior Citizen", "PWD", "Regular"
     ]
 
+def type_writer(text, delay=0.05):
+    for char in text:
+        sys.stdout.write(char)
+        sys.stdout.flush() 
+        time.sleep(delay)
+    print()
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -53,6 +60,7 @@ BodyNumber = int(input("Enter Body Number: "))
 print(f"Good Day {DriverName} and {ConductorName}")
 time.sleep(2)
 now = datetime.now()
+noms = now.replace(microsecond=0)
 
 while True:
     clear()
@@ -94,40 +102,40 @@ while True:
             if Discount in (1, 2, 3):
                 clear()
                 Total = fare[From-1][To-1] * 0.80
-                DiscountFee = fare[From-1][To-1] / 0.80
+                DiscountFee = fare[From-1][To-1] * 0.20
                 print("             GOORPU")
                 print("===================================")
-                print(f"Driver's Name: {DriverName}")
-                print(f"Conductor's Name: {ConductorName}")
-                print(f"Body Number: {BodyNumber}")
-                print(f"Date and Time: {now}\n")
-                print(f"From: {starmall_sampol[From -1]}")
-                print(f"To: {starmall_sampol[To -1]}")
-                print(f"Discount: {Discounts[Discount-1]}")
-                print(f"Fare: P {fare[From-1][To-1]}.00 x {Quantity} = {fare[From-1][To-1] * 5:.2f}")
-                print(f"Discount Amount: P{DiscountFee}")
-                print(f"Total: P{Total * Quantity:.2f}")
+                type_writer(f"Driver's Name: {DriverName}")
+                type_writer(f"Conductor's Name: {ConductorName}")
+                type_writer(f"Body Number: {BodyNumber}")
+                type_writer(f"Date and Time: {noms}\n")
+                type_writer(f"From: {starmall_sampol[From -1]}")
+                type_writer(f"To: {starmall_sampol[To -1]}")
+                type_writer(f"Discount: {Discounts[Discount-1]}")
+                type_writer(f"Fare: P {fare[From-1][To-1]}.00 x {Quantity} = {fare[From-1][To-1] * Quantity:.2f}")
+                type_writer(f"Discount Amount: P{DiscountFee * Quantity:.2f} ")
+                type_writer(f"Total: P{Total * Quantity:.2f}")
                 boundary.append(Total * Quantity)
-                time.sleep(5)
+                time.sleep(3)
                 continue
             elif Discount == 4:
                 clear()
                 DiscountFee = 0
-                Total = fare[From-1]
+                Total = fare[From-1][To-1]
                 print("\n\n              GOORPU")
                 print("===================================")
-                print(f"Driver's Name: {DriverName}")
-                print(f"Conductor's Name: {ConductorName}")
-                print(f"Body Number: {BodyNumber}")
-                print(f"Date and Time: {now}\n")
-                print(f"From: {starmall_sampol[From -1]}")
-                print(f"To: {starmall_sampol[To -1]}")
-                print(f"Discount: {Discounts[Discount-1]}")
-                print(f"Fare: P {fare[From-1][To-1]}.00 x {Quantity} = {fare[From-1][To-1] * 5:.2f}")
-                print(f"Discount Amount: P{DiscountFee}")
-                print(f"Total: P{Total * Quantity}")
+                type_writer(f"Driver's Name: {DriverName}")
+                type_writer(f"Conductor's Name: {ConductorName}")
+                type_writer(f"Body Number: {BodyNumber}")
+                type_writer(f"Date and Time: {noms}\n")
+                type_writer(f"From: {starmall_sampol[From -1]}")
+                type_writer(f"To: {starmall_sampol[To -1]}")
+                type_writer(f"Discount: {Discounts[Discount-1]}")
+                type_writer(f"Fare: P {fare[From-1][To-1]}.00 x {Quantity} = {fare[From-1][To-1] * Quantity:.2f}")
+                type_writer(f"Discount Amount: P{DiscountFee}")
+                type_writer(f"Total: P{Total * Quantity:.2f}")
                 boundary.append(Total * Quantity)
-                time.sleep(10)
+                time.sleep(3)
                 continue
             else:
                 print("Invalid Input...")
@@ -165,40 +173,40 @@ while True:
             if Discount in (1, 2, 3):
                 clear()
                 Total = fare[From-1][To-1] * 0.80
-                DiscountFee = Total / 0.80
+                DiscountFee = Total * 0.20
                 print("\n\n              GOORPU")
-                print("===================================\n")
-                print(f"Driver's Name: {DriverName}")
-                print(f"Conductor's Name: {ConductorName}")
-                print(f"Body Number: {BodyNumber}")
-                print(f"Date and Time: {now}\n")
-                print(f"From: {sampol_starmall[From -1]}")
-                print(f"To: {sampol_starmall[To -1]}")
-                print(f"Discount: {Discounts[Discount-1]}")
-                print(f"Fare: P {fare[From-1][To-1]}.00 x {Quantity} = {fare[From-1][To-1] * 5:.2f}")
-                print(f"Discount Amount: P{DiscountFee}")
-                print(f"Total: P{Total * Quantity:.2f}")
+                print("===================================")
+                type_writer(f"Driver's Name: {DriverName}")
+                type_writer(f"Conductor's Name: {ConductorName}")
+                type_writer(f"Body Number: {BodyNumber}")
+                type_writer(f"Date and Time: {noms}\n")
+                type_writer(f"From: {sampol_starmall[From -1]}")
+                type_writer(f"To: {sampol_starmall[To -1]}")
+                type_writer(f"Discount: {Discounts[Discount-1]}")
+                type_writer(f"Fare: P {fare[From-1][To-1]}.00 x {Quantity} = {fare[From-1][To-1] * Quantity:.2f}")
+                type_writer(f"Discount Amount: P{DiscountFee * Quantity:.2f}")
+                type_writer(f"Total: P{Total * Quantity:.2f}")
                 boundary.append(Total * Quantity)
-                time.sleep(10)
+                time.sleep(3)
                 continue
             elif Discount == 4: 
                 clear()
                 DiscountFee = 0
                 Total = fare[From-1][To-1]
                 print("\n\n              GOORPU")
-                print("===================================\n")
-                print(f"Driver's Name: {DriverName}")
-                print(f"Conductor's Name: {ConductorName}")
-                print(f"Body Number: {BodyNumber}")
-                print(f"Date and Time: {now}\n")
-                print(f"From: {sampol_starmall[From -1]}")
-                print(f"To: {sampol_starmall[To -1]}")
-                print(f"Discount: {Discounts[Discount-1]}")
-                print(f"Fare: P {fare[From-1][To-1]}.00 x {Quantity} = {fare[From-1][To-1] * 5:.2f}")
-                print(f"Discount Amount: P{DiscountFee}")
-                print(f"Total: P{Total * Quantity:.2f}")
+                print("===================================")
+                type_writer(f"Driver's Name: {DriverName}")
+                type_writer(f"Conductor's Name: {ConductorName}")
+                type_writer(f"Body Number: {BodyNumber}")
+                type_writer(f"Date and Time: {noms}\n")
+                type_writer(f"From: {sampol_starmall[From -1]}")
+                type_writer(f"To: {sampol_starmall[To -1]}")
+                type_writer(f"Discount: {Discounts[Discount-1]}")
+                type_writer(f"Fare: P {fare[From-1][To-1]}.00 x {Quantity} = {fare[From-1][To-1] * Quantity:.2f}")
+                type_writer(f"Discount Amount: P{DiscountFee}")
+                type_writer(f"Total: P{Total * Quantity:.2f}")
                 boundary.append(Total * Quantity)
-                time.sleep(10)
+                time.sleep(3)
                 continue
             else:
                 print("Invalid Input...")
