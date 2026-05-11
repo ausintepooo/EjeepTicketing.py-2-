@@ -1,3 +1,5 @@
+import time
+import os
 starmall_sampol = [
     "Starmall",
     "Bulacan State University", 
@@ -38,119 +40,154 @@ Discounts = [
     "Student", "Senior Citizen", "PWD", "Regular"
     ]
 
+def clear():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+
 boundary = []
-print("===================================")
-print("              ROUTE")
-print("===================================")
-print("1. Starmall -> Sampol")
-print("2. Sampol -> Starmall")
-route = int(input("Choose route: "))
-if route == 1:
-    while route == 1:
-        print("===================================")
-        print("           Pick-Up Point")
-        print("==================================")
-        for index, locations in enumerate(starmall_sampol):
-            print(f"{index+1}. {locations} ")
-        print("      Press 0 to end Route")
-        print("==================================")
-        From = int(input("Choose pick-up point: "))
-        if From == 0:
-            MoneyCollected = sum(boundary)
-            print("You Choose to end journey...")
-            print(f"Total money collected: {MoneyCollected:.2f}")
-            break
-        To = int(input("Choose drop-off point: "))
-        Quantity = int(input("Enter Quantity: "))
-        print("===================================")
-        print("             DISCOUNT")
-        print("===================================")
-        print("1. Student \n2. Senior Citizen \n3. PWD \n4. Regular")
-        Discount = int(input("Enter Discount: "))
-        if Discount in (1, 2, 3):
-            Total = fare[From-1][To-1] * 0.80
-            DiscountFee = fare[From-1][To-1] / 0.80
-            print("\n\n              GOORPU")
+
+while True:
+    clear()
+    print("===================================")
+    print("              ROUTE")
+    print("===================================")
+    print("1. Starmall -> Sampol")
+    print("2. Sampol -> Starmall")
+    print("       Press 0 to end session")
+    route = int(input("Choose route: "))
+
+    if route == 1:
+        while route == 1:
+            clear()
             print("===================================")
-            print(f"From: {starmall_sampol[From -1]}")
-            print(f"To: {starmall_sampol[To -1]}")
-            print(f"Discount: {Discounts[Discount-1]}")
-            print(f"Fare: P {fare[From-1][To-1]}.00 x {Quantity} = {fare[From-1][To-1] * 5:.2f}")
-            print(f"Discount Amount: P{DiscountFee}")
-            print(f"Total: P{Total * Quantity:.2f}")
-            boundary.append(Total * Quantity)
-            continue
-        elif Discount == 4:
-            DiscountFee = 0
-            Total = fare[From-1]
-            print("\n\n              GOORPU")
+            print("           Pick-Up Point")
+            print("==================================")
+            for index, locations in enumerate(starmall_sampol):
+                print(f"{index+1}. {locations} ")
+            print("    Press 0 to switch Route")
+            print("==================================")
+            From = int(input("Choose pick-up point: "))
+            if From == 0:
+                clear()
+                print("Switching route...")
+                time.sleep(3)
+                break
+            elif From >= 11:
+                print("Invalid Input...")
+                time.sleep(2)
+                break
+            To = int(input("Choose drop-off point: "))
+            Quantity = int(input("Enter Quantity: "))
             print("===================================")
-            print(f"From: {starmall_sampol[From -1]}")
-            print(f"To: {starmall_sampol[To -1]}")
-            print(f"Discount: {Discounts[Discount-1]}")
-            print(f"Fare: P {fare[From-1][To-1]}.00 x {Quantity} = {fare[From-1][To-1] * 5:.2f}")
-            print(f"Discount Amount: P{DiscountFee}")
-            print(f"Total: P{Total * Quantity}")
-            boundary.append(Total * Quantity)
-            continue
-        else:
-            print("Invalid Input...")
-            break
-        
-    
-    
-elif route == 2:
-    while route == 2:
-        print("===================================")
-        print("           Pick-Up Point")
-        print("==================================")
-        for index, locations in enumerate(sampol_starmall):
-            print(f"{index+1}. {locations} ")
-        print("      Press 0 to end Route")
-        print("==================================")
-        From = int(input("Choose pick-up point: "))
-        if From == 0:
-            MoneyCollected = sum(boundary)
-            print("You Choose to end journey...")
-            print(f"Total money collected: {MoneyCollected:.2f}")
-            break
-        To = int(input("Choose drop-off point: "))
-        Quantity = int(input("Enter Quantity: "))
-        print("===================================")
-        print("             DISCOUNT")
-        print("===================================")
-        for index, discounts in enumerate(Discounts):
-            print(f"{index+1}. {discounts}")
-        Discount = int(input("Enter Discount: "))
-        if Discount in (1, 2, 3):
-            Total = fare[From-1][To-1] * 0.80
-            DiscountFee = Total / 0.80
-            print("\n\n              GOORPU")
-            print("===================================\n")
-            print(f"From: {sampol_starmall[From -1]}")
-            print(f"To: {sampol_starmall[To -1]}")
-            print(f"Discount: {Discounts[Discount-1]}")
-            print(f"Fare: P {fare[From-1][To-1]}.00 x {Quantity} = {fare[From-1][To-1] * 5:.2f}")
-            print(f"Discount Amount: P{DiscountFee}")
-            print(f"Total: P{Total * Quantity:.2f}")
-            boundary.append(Total * Quantity)
-            continue
-        elif Discount == 4: 
-            DiscountFee = 0
-            Total = fare[From-1][To-1]
-            print("\n\n              GOORPU")
-            print("===================================\n")
-            print(f"From: {sampol_starmall[From -1]}")
-            print(f"To: {sampol_starmall[To -1]}")
-            print(f"Discount: {Discounts[Discount-1]}")
-            print(f"Fare: P {fare[From-1][To-1]}.00 x {Quantity} = {fare[From-1][To-1] * 5:.2f}")
-            print(f"Discount Amount: P{DiscountFee}")
-            print(f"Total: P{Total * Quantity:.2f}")
-            boundary.append(Total * Quantity)
-            continue
-        else:
-            print("Invalid Input...")
-            continue
-        
-else:
-    print("Invalid Input...")
+            print("             DISCOUNT")
+            print("===================================")
+            print("1. Student \n2. Senior Citizen \n3. PWD \n4. Regular")
+            Discount = int(input("Enter Discount: "))
+            if Discount in (1, 2, 3):
+                clear()
+                Total = fare[From-1][To-1] * 0.80
+                DiscountFee = fare[From-1][To-1] / 0.80
+                print("\n\n              GOORPU")
+                print("===================================")
+                print(f"From: {starmall_sampol[From -1]}")
+                print(f"To: {starmall_sampol[To -1]}")
+                print(f"Discount: {Discounts[Discount-1]}")
+                print(f"Fare: P {fare[From-1][To-1]}.00 x {Quantity} = {fare[From-1][To-1] * 5:.2f}")
+                print(f"Discount Amount: P{DiscountFee}")
+                print(f"Total: P{Total * Quantity:.2f}")
+                boundary.append(Total * Quantity)
+                time.sleep(5)
+                continue
+            elif Discount == 4:
+                clear()
+                DiscountFee = 0
+                Total = fare[From-1]
+                print("\n\n              GOORPU")
+                print("===================================")
+                print(f"From: {starmall_sampol[From -1]}")
+                print(f"To: {starmall_sampol[To -1]}")
+                print(f"Discount: {Discounts[Discount-1]}")
+                print(f"Fare: P {fare[From-1][To-1]}.00 x {Quantity} = {fare[From-1][To-1] * 5:.2f}")
+                print(f"Discount Amount: P{DiscountFee}")
+                print(f"Total: P{Total * Quantity}")
+                boundary.append(Total * Quantity)
+                time.sleep(10)
+                continue
+            else:
+                print("Invalid Input...")
+                time.sleep(3)
+                break
+
+
+    elif route == 2:
+        while route == 2:
+            clear()
+            print("===================================")
+            print("           Pick-Up Point")
+            print("==================================")
+            for index, locations in enumerate(sampol_starmall):
+                print(f"{index+1}. {locations} ")
+            print("    Press 0 to switch Route")
+            print("==================================")
+            From = int(input("Choose pick-up point: "))
+            if From == 0: 
+                print("Switching route...")
+                time.sleep(3)
+                break
+            elif From >= 11:
+                print("Invalid Input...")
+                time.sleep(2)
+                break
+            To = int(input("Choose drop-off point: "))
+            Quantity = int(input("Enter Quantity: "))
+            print("===================================")
+            print("             DISCOUNT")
+            print("===================================")
+            for index, discounts in enumerate(Discounts):
+                print(f"{index+1}. {discounts}")
+            Discount = int(input("Enter Discount: "))
+            if Discount in (1, 2, 3):
+                clear()
+                Total = fare[From-1][To-1] * 0.80
+                DiscountFee = Total / 0.80
+                print("\n\n              GOORPU")
+                print("===================================\n")
+                print(f"From: {sampol_starmall[From -1]}")
+                print(f"To: {sampol_starmall[To -1]}")
+                print(f"Discount: {Discounts[Discount-1]}")
+                print(f"Fare: P {fare[From-1][To-1]}.00 x {Quantity} = {fare[From-1][To-1] * 5:.2f}")
+                print(f"Discount Amount: P{DiscountFee}")
+                print(f"Total: P{Total * Quantity:.2f}")
+                boundary.append(Total * Quantity)
+                time.sleep(10)
+                continue
+            elif Discount == 4: 
+                clear()
+                DiscountFee = 0
+                Total = fare[From-1][To-1]
+                print("\n\n              GOORPU")
+                print("===================================\n")
+                print(f"From: {sampol_starmall[From -1]}")
+                print(f"To: {sampol_starmall[To -1]}")
+                print(f"Discount: {Discounts[Discount-1]}")
+                print(f"Fare: P {fare[From-1][To-1]}.00 x {Quantity} = {fare[From-1][To-1] * 5:.2f}")
+                print(f"Discount Amount: P{DiscountFee}")
+                print(f"Total: P{Total * Quantity:.2f}")
+                boundary.append(Total * Quantity)
+                time.sleep(10)
+                continue
+            else:
+                print("Invalid Input...")
+                continue
+    elif route == 0:
+        clear()
+        MoneyCollected = sum(boundary)
+        print(f"Total money collected: {MoneyCollected:.2f}")
+        print("Thank You...")
+        time.sleep(5)
+        print("Enjoy the rest of the day...")
+        time.sleep(5)
+        break
+
+    else:
+        print("Invalid Input...")
