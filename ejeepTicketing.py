@@ -1,5 +1,6 @@
 import time
 import os
+from datetime import datetime
 starmall_sampol = [
     "Starmall",
     "Bulacan State University", 
@@ -46,6 +47,13 @@ def clear():
 
 boundary = []
 
+DriverName = input("Enter Driver Name: ")
+ConductorName = input("Enter Conductor Name: ")
+BodyNumber = int(input("Enter Body Number: "))
+print(f"Good Day {DriverName} and {ConductorName}")
+time.sleep(2)
+now = datetime.now()
+
 while True:
     clear()
     print("===================================")
@@ -87,8 +95,12 @@ while True:
                 clear()
                 Total = fare[From-1][To-1] * 0.80
                 DiscountFee = fare[From-1][To-1] / 0.80
-                print("\n\n              GOORPU")
+                print("             GOORPU")
                 print("===================================")
+                print(f"Driver's Name: {DriverName}")
+                print(f"Conductor's Name: {ConductorName}")
+                print(f"Body Number: {BodyNumber}")
+                print(f"Date and Time: {now}\n")
                 print(f"From: {starmall_sampol[From -1]}")
                 print(f"To: {starmall_sampol[To -1]}")
                 print(f"Discount: {Discounts[Discount-1]}")
@@ -104,6 +116,10 @@ while True:
                 Total = fare[From-1]
                 print("\n\n              GOORPU")
                 print("===================================")
+                print(f"Driver's Name: {DriverName}")
+                print(f"Conductor's Name: {ConductorName}")
+                print(f"Body Number: {BodyNumber}")
+                print(f"Date and Time: {now}\n")
                 print(f"From: {starmall_sampol[From -1]}")
                 print(f"To: {starmall_sampol[To -1]}")
                 print(f"Discount: {Discounts[Discount-1]}")
@@ -152,6 +168,10 @@ while True:
                 DiscountFee = Total / 0.80
                 print("\n\n              GOORPU")
                 print("===================================\n")
+                print(f"Driver's Name: {DriverName}")
+                print(f"Conductor's Name: {ConductorName}")
+                print(f"Body Number: {BodyNumber}")
+                print(f"Date and Time: {now}\n")
                 print(f"From: {sampol_starmall[From -1]}")
                 print(f"To: {sampol_starmall[To -1]}")
                 print(f"Discount: {Discounts[Discount-1]}")
@@ -167,6 +187,10 @@ while True:
                 Total = fare[From-1][To-1]
                 print("\n\n              GOORPU")
                 print("===================================\n")
+                print(f"Driver's Name: {DriverName}")
+                print(f"Conductor's Name: {ConductorName}")
+                print(f"Body Number: {BodyNumber}")
+                print(f"Date and Time: {now}\n")
                 print(f"From: {sampol_starmall[From -1]}")
                 print(f"To: {sampol_starmall[To -1]}")
                 print(f"Discount: {Discounts[Discount-1]}")
