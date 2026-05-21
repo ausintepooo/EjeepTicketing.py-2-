@@ -1,5 +1,5 @@
 
-# User Guide for FareTicketing.py-2-
+# User Guide for Fare Ticketing
 
 ## Introduction 
 The Fare Ticketing System is a Python-based terminal system,  
