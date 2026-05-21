@@ -1,7 +1,7 @@
 
-## User Guide for FareTicketing.py-2-
+# User Guide for FareTicketing.py-2-
 
-# Introduction 
+## Introduction 
 The Fare Ticketing System is a Python-based terminal system,  
 designed to help jeepney or transport operators, and manage  
 passenger fares from the starmall ↔ sampol route.  
@@ -12,13 +12,13 @@ The system:
 - Prints a ticket like summary
 - Tracks total money collected during the session
 
-# System Requirements
+## System Requirements
 Before running the system, make sure you have:  
 - Python 3 Installed  
 - A terminal or command prompt to check if Python is installed:  
 - Type on the terminal (python --version)  
 
-# How to Run the Program
+## How to Run the Program
 Save the code as: 
 
 1. Any file name that can be easily identified then add ".py" at the end, ex. (Goorpu.py)  
@@ -27,7 +27,7 @@ Save the code as:
 4. Run the program  
 5. python goorpu.py
 
-# Starting the system
+## Starting the system
 When the program starts, the system will ask for the following:
 
 Enter Driver Name:  
@@ -41,7 +41,7 @@ Enter Body Number: 101
 After entering the information, the system displays:  
 Good Day Johnrick and Stephen 
 
-# Main menu
+## Main menu
 The system will display the route of menu:  
   
 <img width="250" height="70" alt="image" src="https://github.com/user-attachments/assets/7e0d340d-4789-453f-b0f6-406dc2b33460" />
@@ -56,12 +56,12 @@ Option Description
 2 Travel from Sampol to Starmall  
 0 End the session  
 
-# Selecting a Route
+## Selecting a Route
 Choose a route by typing the corresponding number.  
 Example  
 Choose route: 1  
 
-# Selecting Pick-up and Drop-off Points 
+## Selecting Pick-up and Drop-off Points 
 After selecting a route, the system will display all available locations.
 
 Example  
@@ -71,7 +71,7 @@ Carissa 4B
 .....  
 Sampol  
 
-# Steps
+## Steps
 Step 1 - Choose Pick-Up Point  
 Choose pick-up point:  
 Step 2 - Choose Drop-off Point  
@@ -79,7 +79,7 @@ Choose drop-off point:
 Step 3 - Enter Passenger Quantity  
 Enter Quantity:  
 
-# Discount Selection:
+## Discount Selection:
 The system supports the following discounts:  
 1. Student  
 2. Senior Citizen  
@@ -93,7 +93,7 @@ Senior Citizen = 20%
 PWD = 20%  
 Regular = No Discount  
 
-# Fare Computation
+## Fare Computation
 The system automatically computes:  
 
 Base Fare  
@@ -107,7 +107,7 @@ Total Fare = Base Fare x 0.80 x Quantity
 For Regular passengers:    
 Total Fare = Base Fare x Quantity
 
-# Ticket Output
+## Ticket Output
 After entering all information, the system prints a ticket summary.
 
 Example Output:  
@@ -125,21 +125,21 @@ Fare: P23.00 x 2 = 46.00
 Discount Amount: P9.20  
 Total: P36.80  
 
-# Switching Routes
+## Switching Routes
 To switch routes:  
 Press 0 to switch route  
 The system returns to the main route menu.  
 
-# Ending the Session
+## Ending the Session
 1. Return to the Route Menu  
 2. Press 0  
 The system dispplay the total money collected.  
 
-# Example:
+## Example:
 Total money collected: 560.00  
 Thank You...  
 
-# Error Handling
+## Error Handling
 Error:  
 Invalid input  
 Program crashes  
@@ -155,7 +155,7 @@ Enter valid option only
 enter numbert only
 press 0 to return 
 
-# Features of the System
+## Features of the System
 - Automated fare computation  
 - Discount processing  
 - Digital receipt generation  
@@ -163,14 +163,14 @@ press 0 to return
 - Total earnings computation  
 - bidirectiona; route management  
 
-# Developers: 
+## Developers: 
 - Johnrick Ausinte  
+- Janine Garcia  
 - Stephen Osita  
 - Julia Regino  
-- Janine Garcia  
 - Christian Salas  
 
-# Conclusion
+## Conclusion
 The E-jeep Ticketing System improves the efficiency of fare management  
 and helps drivers and conductors provide faster and more accurate  
 service to passengers through automated fare calculation and receipt 
