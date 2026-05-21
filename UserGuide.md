@@ -1,8 +1,8 @@
 
-# User Guide for EjeepTicketing.py-2-
+## User Guide for FareTicketing.py-2-
 
 # Introduction 
-The Ejeep Ticketing System is a Python-based terminal system,  
+The Fare Ticketing System is a Python-based terminal system,  
 designed to help jeepney or transport operators, and manage  
 passenger fares from the starmall ↔ sampol route.  
 
